@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "node --watch-path=src/server src/server/main.js",
+		"dev": "node --env-file=.env --watch-path=src/server src/server/main.js",
 		"start": "NODE_ENV=production node src/server/main.js",
 		"build": "vite build"
 	},
@@ -12,6 +12,7 @@
 		"vite": "^6.2.1"
 	},
 	"dependencies": {
+		"@neondatabase/serverless": "^0.10.4",
 		"express": "^4.21.2",
 		"vite-express": "*"
 	}

@@ -9,7 +9,7 @@
 		"build": "vite build"
 	},
 	"devDependencies": {
-		"vite": "^5.0.2"
+		"vite": "^6.2.1"
 	},
 	"dependencies": {
 		"@neondatabase/serverless": "^0.10.4",

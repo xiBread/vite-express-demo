@@ -1,0 +1,18 @@
+{
+	"name": "vite-express-demo",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "node --watch-path=src/server src/server/main.js",
+		"start": "NODE_ENV=production node src/server/main.js",
+		"build": "vite build"
+	},
+	"devDependencies": {
+		"vite": "^6.2.1"
+	},
+	"dependencies": {
+		"express": "^4.21.2",
+		"vite-express": "*"
+	}
+}

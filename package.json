@@ -4,11 +4,12 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "node --env-file=.env --watch server.js",
+		"dev": "tsx watch --env-file=.env --exclude \"vite.config.*\" server.js",
 		"start": "NODE_ENV=production node server.js",
 		"build": "vite build"
 	},
 	"devDependencies": {
+		"tsx": "^4.19.3",
 		"vite": "^6.2.1"
 	},
 	"dependencies": {

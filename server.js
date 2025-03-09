@@ -23,6 +23,8 @@ router.post("/recipes", async (req, res) => {
 	const [fields, files] = await form.parse(req);
 
 	const image = files.image[0];
+	const ingredients = fields.ingredients[0].split("\n").map((i) => i.trim());
+	const instructions = fields.instructions[0].split("\n").map((i) => i.trim());
 
 	const buffer = await fs.readFile(image.filepath);
 	const blob = await put(image.originalFilename, buffer, {
@@ -31,7 +33,7 @@ router.post("/recipes", async (req, res) => {
 
 	await sql`
 		INSERT INTO recipes (name, description, image_url, ingredients, instructions)
-		VALUES (${fields.name[0]}, ${fields.description[0]}, ${blob.url}, ${fields.ingredients}, ${fields.instructions})
+		VALUES (${fields.name[0]}, ${fields.description[0]}, ${blob.url}, ${ingredients}, ${instructions})
 	`;
 
 	res.redirect(303, "/");

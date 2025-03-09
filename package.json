@@ -4,8 +4,8 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "node --env-file=.env --watch-path=src/server src/server/main.js",
-		"start": "NODE_ENV=production node src/server/main.js",
+		"dev": "node --env-file=.env --watch server.js",
+		"start": "NODE_ENV=production node server.js",
 		"build": "vite build"
 	},
 	"devDependencies": {

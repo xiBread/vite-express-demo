@@ -6,7 +6,18 @@ const response = await fetch("/api/recipes");
 const recipes = await response.json();
 
 for (const recipe of recipes) {
-	recipeGrid.innerHTML = `
+	let ingredients = "";
+	let instructions = "";
+
+	for (const ingr of recipe.ingredients) {
+		ingredients += `<li>${ingr}</li>`;
+	}
+
+	for (const step of recipe.instructions) {
+		instructions += `<li><p>${step}</p></li>`;
+	}
+
+	recipeGrid.innerHTML += `
 		<div class="card">
 			<img class="image" src="${recipe.image_url}" alt="${recipe.name}" />
 
@@ -21,12 +32,12 @@ for (const recipe of recipes) {
 				<div class="content">
 					<div class="info ingredients">
 						<h3>Ingredients</h3>
-						<ul class="list"></ul>
+						<ul class="list">${ingredients}</ul>
 					</div>
 
 					<div class="info instructions">
 						<h3>Instructions</h3>
-						<ol class="list"></ol>
+						<ol class="list">${instructions}</ol>
 					</div>
 				</div>
 
@@ -34,15 +45,4 @@ for (const recipe of recipes) {
 			</div>
 		</div>
 	`;
-
-	const ingredientList = recipeGrid.querySelector(".ingredients ul");
-	const instructions = recipeGrid.querySelector(".instructions ol");
-
-	for (const ingr of recipe.ingredients) {
-		ingredientList.innerHTML += `<li>${ingr}</li>`;
-	}
-
-	for (const step of recipe.instructions) {
-		instructions.innerHTML += `<li><p>${step}</p></li>`;
-	}
 }

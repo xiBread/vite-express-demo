@@ -4,9 +4,30 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-main {
+body {
+	margin: 0 auto;
+}
+
+#app-header {
+	border-bottom: 1px solid #d4d4d4;
+	padding: 1rem 1.5rem;
+
+	.header-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		h1 {
+			font-size: 1.25rem;
+			margin: 0;
+		}
+	}
+}
+
+#main {
 	max-width: 1280px;
 	margin: 0 auto;
+	padding-top: 3rem;
 }
 
 .recipes {

@@ -45,6 +45,7 @@
 
 	input:not([type="file"]),
 	textarea {
+		/* Take into account any padding and borders when calculating width/height */
 		box-sizing: border-box;
 		display: flex;
 		height: 2.5rem;
@@ -75,6 +76,14 @@
 		}
 	}
 
+	/*
+	Nesting here looks weird but this translates to:
+
+	#ingredients textarea {}
+	#instructions textarea {}
+
+	i.e append the parent selector to the child
+	*/
 	textarea {
 		font-family: inherit;
 		padding-top: 0.5rem;

@@ -1,8 +1,12 @@
+// Import our styles
 import "./style.css";
 
 const recipeGrid = document.querySelector(".recipes");
 
+// Make a request to our server to get the recipes
 const response = await fetch("/api/recipes");
+
+// Since we sent our recipes as JSON on the server, we need to parse it as such
 const recipes = await response.json();
 
 for (const recipe of recipes) {
@@ -17,6 +21,9 @@ for (const recipe of recipes) {
 		instructions += `<li><p>${step}</p></li>`;
 	}
 
+	// Note: this is a pretty awkward way to render html. Normally you would use a
+	// templating engine or a framework like React or Vue; 9/10 times you don't
+	// directly edit an element's innerHTML because it could lead to XSS attacks.
 	recipeGrid.innerHTML += `
 		<div class="card">
 			<img class="image" src="${recipe.image_url}" alt="${recipe.name}" />

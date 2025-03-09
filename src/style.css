@@ -1,5 +1,6 @@
 :root {
 	font-family: InterVariable, system-ui, sans-serif;
+	/* These are just to make font rendering look smoother */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -7,6 +8,35 @@
 body {
 	margin: 0 auto;
 }
+
+/*
+Taking advantage of CSS nesting to avoid repetition
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting
+
+TL;DR:
+
+.foo {
+  color: red;
+
+  .bar {
+	color: blue;
+  }
+}
+
+is the same as:
+
+.foo {
+  color: red;
+}
+
+.foo .bar {
+  color: blue;
+}
+---
+
+rem units are relative to the root font size (which is commonly 16px)
+So 1rem = 16px.
+*/
 
 #app-header {
 	border-bottom: 1px solid #d4d4d4;
@@ -48,6 +78,7 @@ body {
 
 	.image {
 		aspect-ratio: 16 / 9;
+		/* Fill the element without distorting the image */
 		object-fit: cover;
 		max-width: 100%;
 	}
@@ -79,6 +110,7 @@ body {
 
 	.content-container {
 		position: relative;
+		/* "grow" this element to fill available space */
 		flex-grow: 1;
 
 		.scroll-shadow {
@@ -97,6 +129,7 @@ body {
 		inset: 0;
 		padding: 1.25rem;
 		padding-top: 0;
+		/* Make this element scrollable */
 		overflow-y: auto;
 
 		.info h3 {
@@ -109,6 +142,7 @@ body {
 		.info .list {
 			padding-left: 1.5rem;
 
+			/* Every child except the last */
 			& > :not(:last-child) {
 				margin-bottom: 0.5rem;
 			}

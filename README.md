@@ -11,13 +11,7 @@
     ```
 
 3. Next, `cd` into the directory and run `npm install`.
-4. Create `.env` file at the root with the following content:
-
-    ```txt
-    DATABASE_URL="..."
-    ```
-
-    Replace the `...` with the database url provided by Neon on Vercel.
+4. Rename `.env.example` to `.env` and replace with the values provided by Vercel.
 5. Finally, run `npm run dev`.
 
 ### Adding new pages

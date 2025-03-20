@@ -45,6 +45,9 @@ To add a new page:
   - Normally, back in the good ol' days, JavaScript was only able to be ran in the browser, but now we have various runtimes (platform-agnostic environments that can execute code) that can run JS virtually anywhere.
 - [Vercel](https://vercel.com/) for hosting (and providing the database and blob storage)
   - Vercel handles website hosting, along with a bunch of other stuff that you can integrate, such as providing a database and storage like this demo uses.
+- [Vercel Blob](https://vercel.com/docs/vercel-blob) for storing images
+  - Like S3, but without feeling like you need ~~to become an alchoholic~~ a degree in cloud computing to use it!
+  - ACLs? Buckets? Mutability? Never heard of 'em.
 - [Neon](https://neon.tech/) for the database
   - Neon is a newer platform that hosts serverless databases using [PostgreSQL](https://www.postgresql.org/).
   - Serverless databases handle a lot of the database management for you:

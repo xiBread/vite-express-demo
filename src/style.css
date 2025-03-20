@@ -32,6 +32,7 @@ is the same as:
 .foo .bar {
   color: blue;
 }
+
 ---
 
 rem units are relative to the root font size (which is commonly 16px)
@@ -77,6 +78,7 @@ So 1rem = 16px.
 	overflow: hidden;
 
 	.image {
+		/* Common 16:9 aspect ratios are 1280x720, 1920x1080, and 3840x2160 */
 		aspect-ratio: 16 / 9;
 		/* Fill the element without distorting the image */
 		object-fit: cover;

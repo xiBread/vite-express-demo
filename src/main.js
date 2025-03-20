@@ -1,4 +1,5 @@
-// Import our styles
+// Import our styles (stylesheet imports are handled by Vite, normally this
+// doesn't work in browsers).
 import "./style.css";
 
 const recipeGrid = document.querySelector(".recipes");

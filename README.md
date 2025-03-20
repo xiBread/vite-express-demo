@@ -1,5 +1,25 @@
 # Vite Express Demo
 
+## Running
+
+1. Clone the repository: `git clone https://github.com/xiBread/vite-express-demo.git`
+2. Ensure you have [Node.js](https://nodejs.org/en/download) downloaded. Installing Node will also install `npm`, the default package manager for Node. You can verify their installations by running the following commands:
+
+    ```sh
+    node --version
+    npm --version
+    ```
+
+3. Next, `cd` into the directory and run `npm install`.
+4. Create `.env` file at the root with the following content:
+
+    ```txt
+    DATABASE_URL="..."
+    ```
+
+    Replace the `...` with the database url provided by Neon on Vercel.
+5. Finally, run `npm run dev`.
+
 ## Stack
 
 > [!IMPORTANT]

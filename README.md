@@ -1,5 +1,10 @@
 # Vite Express Demo
 
+There's a [live demo available](https://vite-express-demo.vercel.app/) that you can mess around with.
+
+> [!NOTE]
+> Adding a new recipe will add it for everyone else who visits (and I haven't implemented deletion), so try not to spam with filler data or add anything inappropriate ~~Mollie~~.
+
 ## Running
 
 1. Clone the repository: `git clone https://github.com/xiBread/vite-express-demo.git`

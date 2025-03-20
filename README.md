@@ -20,6 +20,28 @@
     Replace the `...` with the database url provided by Neon on Vercel.
 5. Finally, run `npm run dev`.
 
+### Adding new pages
+
+To add a new page:
+
+1. Create a new `.html` file at the root (or a subdirectory for nested paths) e.g. `about.html` or `/nested/page.html`.
+2. Open [`vite.config.js`](/vite.config.js) and add a new entry under `rollupOptions.input`. The key name doesn't matter, but the value should be similar to the existing entries; pass a relative path as the second argument to `path.resolve`.
+
+    For example, to add a new page called `menu.html`:
+
+    ```js
+    // vite.config.js
+    export default defineConfig({
+      // ... other options
+      rollupOptions: {
+        input: {
+          // ... other entry points
+          menu: path.resolve(dirname, "menu.html"),
+        }
+      }
+    })
+    ```
+
 ## Stack
 
 > [!IMPORTANT]

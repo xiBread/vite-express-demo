@@ -10,7 +10,7 @@
 	},
 	"devDependencies": {
 		"tsx": "^4.19.3",
-		"vite": "^6.2.1"
+		"vite": "^6.2.3"
 	},
 	"dependencies": {
 		"@neondatabase/serverless": "^0.10.4",
